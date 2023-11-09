@@ -11,6 +11,7 @@ import com.example.incomeexpense.Fragment.ReportFragment
 import com.example.incomeexpense.Fragment.TransectionFragment
 import com.example.incomeexpense.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,30 +20,59 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+//        var Type = arrayOf  ("profile","amount","transection","report")
+//        var Fragments = arrayOf(ProfileFragment(),AmountFragment(),TransectionFragment(),ReportFragment())
+//        loadFragment(ProfileFragment())
+//        var bottomnav = findViewById<BottomNavigationView>(R.id.bottomNav)
+//            .setOnNavigationItemSelectedListener {object : OnNavigationItemSelectedListener{
+//                override fun onNavigationItemSelected(item: MenuItem): Boolean {
+//                    when(item.itemId) {
+//                        R.id.profile->{
+//                            loadFragment(ProfileFragment())
+//                        }
+//                    }
+//                    when(item.itemId) {
+//                        R.id.addAmount->{
+//                            loadFragment(AmountFragment())
+//                        }
+//                    }
+//                    when(item.itemId) {
+//                        R.id.transection->{
+//                            loadFragment(TransectionFragment())
+//                        }
+//                    }
+//                    when(item.itemId) {
+//                        R.id.report->{
+//                            loadFragment(ReportFragment())
+//                        }
+//                    }
+//                    return true
+//                }
+//            }
 
-        binding.bottomNav.setOnItemSelectedListener {
-            when(it){
-                0 -> {
-//                    Toast.makeText(this, "0000", Toast.LENGTH_SHORT).show()
+        var bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNav)
+        bottomNavigationView.setOnNavigationItemSelectedListener{item->
+            when(item.itemId){
+                R.id.profile->{
                     loadFragment(ProfileFragment())
+                    true
                 }
-                1 -> {
+                R.id.addAmount->{
                     loadFragment(AmountFragment())
+                    true
                 }
-                2 -> {
+                R.id.transection->{
                     loadFragment(TransectionFragment())
+                    true
                 }
-                3 -> {
+                R.id.report->{
                     loadFragment(ReportFragment())
+                    true
                 }
-                else->{
-//                    Toast.makeText(this, "Else", Toast.LENGTH_SHORT).show()
-                    loadFragment(ProfileFragment())
-                }
+                else->false
 
             }
         }
-
     }
 
     private fun loadFragment(fragment: Fragment) {

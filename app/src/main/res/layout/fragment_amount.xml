@@ -48,7 +48,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Income"
-                android:inputType="number"
                 android:textColor="@color/black"
                 android:textSize="@dimen/_14sdp"
                 android:layout_gravity="center"/>

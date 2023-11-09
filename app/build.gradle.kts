@@ -51,6 +51,8 @@ dependencies {
     implementation ("androidx.cardview:cardview:1.0.0")
     implementation ("com.intuit.sdp:sdp-android:1.1.0")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+
     implementation ("com.github.ibrahimsn98:SmoothBottomBar:1.7.9")
+    implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
 
 }

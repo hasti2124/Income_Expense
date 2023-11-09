@@ -27,4 +27,26 @@
 
     </FrameLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            app:cardCornerRadius="10dp"
+            app:cardUseCompatPadding="true"
+            app:cardElevation="10dp">
+
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:layout_width="300dp"
+                android:layout_height="500dp"
+                android:id="@+id/pieChart"
+                android:layout_gravity="center"
+                tools:ignore="MissingClass" />
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
 </LinearLayout>
